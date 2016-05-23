@@ -1,11 +1,10 @@
-package com.mypromotionapp;
+package com.mypromotionapp.app;
 
 import android.app.Application;
 import android.util.Log;
 
 import com.android.volley.toolbox.ImageLoader;
-
-import java.util.PriorityQueue;
+import com.mypromotionapp.volleyrequest.MyVolleyRequest;
 
 /**
  * Created by ${} on 5/22/16.

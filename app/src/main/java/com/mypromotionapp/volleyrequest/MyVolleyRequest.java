@@ -1,4 +1,4 @@
-package com.mypromotionapp;
+package com.mypromotionapp.volleyrequest;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -31,7 +31,7 @@ public class MyVolleyRequest {
         imageLoader = new ImageLoader(requestQueue,
                 new ImageLoader.ImageCache() {
                     private final LruCache<String, Bitmap>
-                            cache = new LruCache<String, Bitmap>(20);
+                            cache = new LruCache<>(20);
 
                     @Override
                     public Bitmap getBitmap(String url) {

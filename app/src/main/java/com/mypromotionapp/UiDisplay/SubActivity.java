@@ -1,4 +1,4 @@
-package com.mypromotionapp;
+package com.mypromotionapp.uidisplay;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
+import com.mypromotionapp.app.MyPromotionCardApplication;
+import com.mypromotionapp.data.Promotion;
+import com.mypromotionapp.R;
 
 public class SubActivity extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class SubActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sub_activity);
-        final Promotion promotion = (Promotion) getIntent().getParcelableExtra("myData");
+        final Promotion promotion = getIntent().getParcelableExtra("myData");
 
         ImageView imageView = (ImageView) findViewById(R.id.subImageView);
         imageLoader = MyPromotionCardApplication.getInstance().getImageLoader();
@@ -66,6 +68,8 @@ public class SubActivity extends AppCompatActivity {
                     }
                 }
             });
+        } else if (button != null) {
+            button.setVisibility(View.GONE);
         }
     }
 }

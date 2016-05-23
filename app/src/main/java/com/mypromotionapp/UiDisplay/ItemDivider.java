@@ -1,4 +1,4 @@
-package com.mypromotionapp;
+package com.mypromotionapp.uidisplay;
 
 import android.content.Context;
 import android.content.res.TypedArray;

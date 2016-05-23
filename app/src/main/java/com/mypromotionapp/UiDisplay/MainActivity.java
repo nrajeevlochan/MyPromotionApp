@@ -1,4 +1,4 @@
-package com.mypromotionapp;
+package com.mypromotionapp.uidisplay;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,15 +13,17 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.mypromotionapp.Constants;
+import com.mypromotionapp.adapter.MyRecyclerAdapter;
+import com.mypromotionapp.data.Promotion;
+import com.mypromotionapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -112,42 +114,46 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                try {
-                    promotion.setTitle(object.getString(Constants.TAG_TITLE));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    promotion.setImageUrl(object.getString(Constants.TAG_IMAGE_URL));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    promotion.setFooter(object.getString(Constants.TAG_FOOTER));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    promotion.setDescription(object.getString(Constants.TAG_DESCRIPTION));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                JSONObject buttonObject = null;
-                try {
-                    buttonObject = object.getJSONObject(Constants.TAG_BUTTON);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                if (buttonObject != null) {
+                if (object != null) {
+
                     try {
-                        promotion.setButtonTitle(buttonObject.getString(Constants.TAG_BUTTON_TITLE));
+                        promotion.setTitle(object.getString(Constants.TAG_TITLE));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                     try {
-                        promotion.setButtonWebUrl(buttonObject.getString(Constants.TAG_TARGET));
+                        promotion.setImageUrl(object.getString(Constants.TAG_IMAGE_URL));
                     } catch (JSONException e) {
                         e.printStackTrace();
+                    }
+                    try {
+                        promotion.setFooter(object.getString(Constants.TAG_FOOTER));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        promotion.setDescription(object.getString(Constants.TAG_DESCRIPTION));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    JSONObject buttonObject = null;
+                    try {
+                        buttonObject = object.getJSONObject(Constants.TAG_BUTTON);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (buttonObject != null) {
+                        try {
+                            promotion.setButtonTitle(buttonObject.getString(Constants.TAG_BUTTON_TITLE));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            promotion.setButtonWebUrl(buttonObject.getString(Constants.TAG_TARGET));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
                 promotionList.add(promotion);

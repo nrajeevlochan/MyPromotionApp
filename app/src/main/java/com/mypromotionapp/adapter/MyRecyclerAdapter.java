@@ -1,17 +1,18 @@
-package com.mypromotionapp;
+package com.mypromotionapp.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.mypromotionapp.data.Promotion;
+import com.mypromotionapp.R;
+import com.mypromotionapp.app.MyPromotionCardApplication;
 
 import java.util.List;
 

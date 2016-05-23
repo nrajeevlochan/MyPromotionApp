@@ -1,6 +1,5 @@
-package com.mypromotionapp;
+package com.mypromotionapp.uidisplay;
 
-import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +9,8 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+
+import com.mypromotionapp.R;
 
 public class WebViewActivity extends AppCompatActivity {
 
