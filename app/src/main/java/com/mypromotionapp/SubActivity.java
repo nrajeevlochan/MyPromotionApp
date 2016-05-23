@@ -54,18 +54,18 @@ public class SubActivity extends AppCompatActivity {
         if (button != null && buttonText != null) {
             button.setText(buttonText);
             button.setTextColor(Color.WHITE);
-        }
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String myWebUrl = promotion.getButtonWebUrl();
-                if (myWebUrl != null) {
-                    Intent intent = new Intent(v.getContext(), WebViewActivity.class);
-                    intent.putExtra("myWebUrl", myWebUrl);
-                    startActivity(intent);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String myWebUrl = promotion.getButtonWebUrl();
+                    if (myWebUrl != null) {
+                        Intent intent = new Intent(v.getContext(), WebViewActivity.class);
+                        intent.putExtra("myWebUrl", myWebUrl);
+                        startActivity(intent);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 }

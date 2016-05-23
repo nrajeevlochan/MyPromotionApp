@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        mRecyclerView.addItemDecoration(
+                new ItemDivider(this, R.drawable.divider));
+
         promotionList = new ArrayList<>();
 
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

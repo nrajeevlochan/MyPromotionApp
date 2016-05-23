@@ -3,19 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusable="true"
-    android:paddingTop="10dp"
     android:clickable="true"
     android:orientation="horizontal">
 
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/imageView"
         android:layout_width="80dp"
-        android:layout_height="70dp"/>
+        android:layout_height="60dp"/>
 
     <TextView
         android:id="@+id/title"
         android:textSize="16dp"
-        android:textStyle="bold"
         android:padding="8dp"
         android:gravity="right|center"
         android:layout_toRightOf="@id/imageView"
